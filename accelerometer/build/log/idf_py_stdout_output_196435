@@ -1,0 +1,60 @@
+Command: /home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/l86/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace /home/l86/projects/accelerometer/build/accelerometer.elf /home/l86/projects/accelerometer/build/bootloader/bootloader.elf -m '/home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/l86/esp/esp-idf/tools/idf.py'
+[0;32mI (110) esp_image: segment 3: paddr=0003228c vaddr=40807398 sizeESP-ROM:esp32c6-20220919[0m
+Build:Sep 19 2022
+rst:0x15 (USB_UART_HPSYS),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40802c52
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (23) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (24) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (26) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (30) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (34) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (38) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (51) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (64) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (71) boot: End of partition table[0m
+[0;32mI (74) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=08c58h ( 35928) map[0m
+[0;32mI (88) esp_image: segment 1: paddr=00018c80 vaddr=40800000 size=07398h ( 29592) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=12264h ( 74340) map[0m
+[0;32mI (110) esp_image: segment 3: paddr=0003228c vaddr=40807398 size=04404h ( 17412) load[0m
+[0;32mI (115) esp_image: segment 4: paddr=00036698 vaddr=4080b7a0 size=01940h (  6464) load[0m
+[0;32mI (120) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (120) boot: Disabling RNG early entropy source...[0m
+[0;32mI (135) cpu_start: Unicore app[0m
+[0;32mI (144) cpu_start: Pro cpu start user code[0m
+[0;32mI (144) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (144) app_init: Application information:[0m
+[0;32mI (145) app_init: Project name:     accelerometer[0m
+[0;32mI (149) app_init: App version:      1[0m
+[0;32mI (152) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (157) app_init: ELF file SHA256:  885ff0bfa...[0m
+[0;32mI (161) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (165) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (169) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (173) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (177) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (183) heap_init: At 4080E040 len 0006E5D0 (441 KiB): RAM[0m
+[0;32mI (188) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (193) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (199) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (212) spi_flash: detected chip: generic[0m
+[0;32mI (215) spi_flash: flash io: dio[0m
+[0;33mW (218) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (231) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (237) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (243) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (248) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (252) main_task: Started on CPU0[0m
+[0;32mI (252) main_task: Calling app_main()[0m
+[0;32mI (252) main: Hello Starting Up[0m
+

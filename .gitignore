@@ -1,0 +1,26 @@
+# Build output
+/build/
+/CMakeFiles/
+/Makefile
+/sdkconfig.old
+
+# IDF generated files
+*.bin
+*.elf
+*.map
+*.hex
+*.o
+*.a
+*.lib
+
+# Editor/IDE files
+.vscode/
+*.code-workspace
+.idea/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.pyc
+

@@ -1,0 +1,993 @@
+Command: /home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/l86/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace /home/l86/projects/accelerometer/build/accelerometer.elf /home/l86/projects/accelerometer/build/bootloader/bootloader.elf -m '/home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/l86/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+r dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0x15 (USB_UART_HPSYS),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40017604
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (23) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (24) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (26) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (30) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (34) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (38) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (51) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (64) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (71) boot: End of partition table[0m
+[0;32mI (74) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (89) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (113) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (124) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (125) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) cpu_start: Unicore app[0m
+[0;32mI (147) cpu_start: Pro cpu start user code[0m
+[0;32mI (147) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (147) app_init: Application information:[0m
+[0;32mI (148) app_init: Project name:     accelerometer[0m
+[0;32mI (151) app_init: App version:      1[0m
+[0;32mI (155) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (160) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (164) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (168) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (172) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (176) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (180) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (186) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (191) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (196) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (202) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (215) spi_flash: detected chip: generic[0m
+[0;32mI (218) spi_flash: flash io: dio[0m
+[0;33mW (221) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (234) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (240) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (246) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (251) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (255) main_task: Started on CPU0[0m
+[0;32mI (255) main_task: Calling app_main()[0m
+[1;31mE (255) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (265) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (265) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (24) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (222) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (270) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (287) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (291) main_task: Started on CPU0[0m
+[0;32mI (291) main_task: Calling app_main()[0m
+[1;31mE (291) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (301) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (301) i2c.master: i2c_master_multi_buffer_transmit(1214): I2C transaction failed[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x103 (ESP_ERR_INVALID_STATE) at 0x4200b02c
+file: "./main/accelerometer.c" line 49
+func: app_main
+expression: i2c_master_transmit(dev_handle, wakeup, 2, -1)
+
+abort() was called at PC 0x40805119 on core 0
+Core  0 register dump:
+MEPC    : 0x40805164  RA      : 0x40805122  SP      : 0x40811650  GP      : 0x4080c6f4  
+TP      : 0x408117a0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x408116b4  A0      : 0x4081167c  A1      : 0x408116b2  
+A2      : 0x00000000  A3      : 0x408116a9  A4      : 0x00000001  A5      : 0x4080e000  
+A6      : 0x00000000  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40800001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/l86/projects/accelerometer/build/bootloader/bootloader.elf"
+panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/panic.c:483
+#1  0x40805122 in esp_system_abort (details=details@entry=0x4081167c "abort() was called at PC 0x40805119 on core 0") at /home/l86/esp/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x4080a160 in abort () at /home/l86/esp/esp-idf/components/newlib/src/abort.c:38
+#3  0x4080511c in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x4201ae04 "", line=line@entry=49, function=function@entry=0x42020bac <__func__.0> "", expression=expression@entry=0x4201ae5c "") at /home/l86/esp/esp-idf/components/esp_system/esp_err.c:49
+#4  0x4200b030 in app_main () at /home/l86/projects/accelerometer/main/accelerometer.c:49
+#5  0x42015a96 in main_task (args=<error reading variable: value has been optimized out>) at /home/l86/esp/esp-idf/components/freertos/app_startup.c:208
+#6  0x4080645a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/l86/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: dbbc8ffb5
+
+Rebooting...
+ESP-ROM:esp32c6-20220919
+Build:Sep 19 2022
+rst:0xc (SW_CPU),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4001975a
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (22) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (22) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (23) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (25) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (29) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (33) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (37) boot: Enabling RNG early entropy source...[0m
+[0;32mI (41) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (50) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (57) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (63) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (70) boot: End of partition table[0m
+[0;32mI (73) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a0e8h ( 41192) map[0m
+[0;32mI (96) esp_image: segment 1: paddr=0001a110 vaddr=40800000 size=05f08h ( 24328) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=15e9ch ( 89756) map[0m
+[0;32mI (142) esp_image: segment 3: paddr=00035ec4 vaddr=40805f08 size=05fe4h ( 24548) load[0m
+[0;32mI (154) esp_image: segment 4: paddr=0003beb0 vaddr=4080bef0 size=01954h (  6484) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (165) boot: Disabling RNG early entropy source...[0m
+[0;32mI (175) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (184) app_init: Application information:[0m
+[0;32mI (184) app_init: Project name:     accelerometer[0m
+[0;32mI (188) app_init: App version:      1[0m
+[0;32mI (191) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (196) app_init: ELF file SHA256:  dbbc8ffb5...[0m
+[0;32mI (201) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (205) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (208) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (212) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (216) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (223) heap_init: At 4080E7D0 len 0006DE40 (439 KiB): RAM[0m
+[0;32mI (228) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (233) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (239) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (251) spi_flash: detected chip: generic[0m
+[0;32mI (255) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m

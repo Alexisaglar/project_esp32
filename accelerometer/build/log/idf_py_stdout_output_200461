@@ -1,0 +1,369 @@
+Command: /home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/l86/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace /home/l86/projects/accelerometer/build/accelerometer.elf /home/l86/projects/accelerometer/build/bootloader/bootloader.elf -m '/home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/l86/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+ep 19 2022
+rst:0x15 (USB_UART_HPSYS),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40802c52
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (25) boot: efuse block revision: v0.3[0m
+[0;32mI (28) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=08c80h ( 35968) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=00018ca8 vaddr=40800000 size=07370h ( 29552) load[0m
+[0;32mI (97) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=12288h ( 74376) map[0m
+[0;32mI (112) esp_image: segment 3: paddr=000322b0 vaddr=40807370 size=0442ch ( 17452) load[0m
+[0;32mI (116) esp_image: segment 4: paddr=000366e4 vaddr=4080b7a0 size=01940h (  6464) load[0m
+[0;32mI (121) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (122) boot: Disabling RNG early entropy source...[0m
+[0;32mI (137) cpu_start: Unicore app[0m
+[0;32mI (146) cpu_start: Pro cpu start user code[0m
+[0;32mI (146) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (146) app_init: Application information:[0m
+[0;32mI (146) app_init: Project name:     accelerometer[0m
+[0;32mI (150) app_init: App version:      1[0m
+[0;32mI (154) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (159) app_init: ELF file SHA256:  18d877adc...[0m
+[0;32mI (163) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (167) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (171) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (175) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (178) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (185) heap_init: At 4080E040 len 0006E5D0 (441 KiB): RAM[0m
+[0;32mI (190) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (195) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (201) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (213) spi_flash: detected chip: generic[0m
+[0;32mI (217) spi_flash: flash io: dio[0m
+[0;33mW (220) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (232) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (238) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (245) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (249) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (254) main_task: Started on CPU0[0m
+[0;32mI (254) main_task: Calling app_main()[0m
+[0;32mI (254) main: Hello Starting Up[0m
+
+[0;32mI (2254) main: supposed to have printed[0m
+
+[0;32mI (4254) main: supposed to have printed[0m
+
+[0;32mI (6254) main: supposed to have printed[0m
+
+[0;32mI (8254) main: supposed to have printed[0m
+
+[0;32mI (10254) main: supposed to have printed[0m
+
+[0;32mI (12254) main: supposed to have printed[0m
+
+[0;32mI (14254) main: supposed to have printed[0m
+
+[0;32mI (16254) main: supposed to have printed[0m
+
+[0;32mI (18254) main: supposed to have printed[0m
+
+[0;32mI (20254) main: supposed to have printed[0m
+
+[0;32mI (22254) main: supposed to have printed[0m
+
+[0;32mI (24254) main: supposed to have printed[0m
+
+[0;32mI (26254) main: supposed to have printed[0m
+
+[0;32mI (28254) main: supposed to have printed[0m
+
+[0;32mI (30254) main: supposed to have printed[0m
+
+[0;32mI (32254) main: supposed to have printed[0m
+
+[0;32mI (34254) main: supposed to have printed[0m
+
+[0;32mI (36254) main: supposed to have printed[0m
+
+[0;32mI (38254) main: supposed to have printed[0m
+
+[0;32mI (40254) main: supposed to have printed[0m
+
+[0;32mI (42254) main: supposed to have printed[0m
+
+[0;32mI (44254) main: supposed to have printed[0m
+
+[0;32mI (46254) main: supposed to have printed[0m
+
+[0;32mI (48254) main: supposed to have printed[0m
+
+[0;32mI (50254) main: supposed to have printed[0m
+
+[0;32mI (52254) main: supposed to have printed[0m
+
+[0;32mI (54254) main: supposed to have printed[0m
+
+[0;32mI (56254) main: supposed to have printed[0m
+
+[0;32mI (58254) main: supposed to have printed[0m
+
+[0;32mI (60254) main: supposed to have printed[0m
+
+[0;32mI (62254) main: supposed to have printed[0m
+
+[0;32mI (64254) main: supposed to have printed[0m
+
+[0;32mI (66254) main: supposed to have printed[0m
+
+[0;32mI (68254) main: supposed to have printed[0m
+
+[0;32mI (70254) main: supposed to have printed[0m
+
+[0;32mI (72254) main: supposed to have printed[0m
+
+[0;32mI (74254) main: supposed to have printed[0m
+
+[0;32mI (76254) main: supposed to have printed[0m
+
+[0;32mI (78254) main: supposed to have printed[0m
+
+[0;32mI (80254) main: supposed to have printed[0m
+
+[0;32mI (82254) main: supposed to have printed[0m
+
+[0;32mI (84254) main: supposed to have printed[0m
+
+[0;32mI (86254) main: supposed to have printed[0m
+
+[0;32mI (88254) main: supposed to have printed[0m
+
+[0;32mI (90254) main: supposed to have printed[0m
+
+[0;32mI (92254) main: supposed to have printed[0m
+
+[0;32mI (94254) main: supposed to have printed[0m
+
+[0;32mI (96254) main: supposed to have printed[0m
+
+[0;32mI (98254) main: supposed to have printed[0m
+
+[0;32mI (100254) main: supposed to have printed[0m
+
+[0;32mI (102254) main: supposed to have printed[0m
+
+[0;32mI (104254) main: supposed to have printed[0m
+
+[0;32mI (106254) main: supposed to have printed[0m
+
+[0;32mI (108254) main: supposed to have printed[0m
+
+[0;32mI (110254) main: supposed to have printed[0m
+
+[0;32mI (112254) main: supposed to have printed[0m
+
+[0;32mI (114254) main: supposed to have printed[0m
+
+[0;32mI (116254) main: supposed to have printed[0m
+
+[0;32mI (118254) main: supposed to have printed[0m
+
+[0;32mI (120254) main: supposed to have printed[0m
+
+[0;32mI (122254) main: supposed to have printed[0m
+
+[0;32mI (124254) main: supposed to have printed[0m
+
+[0;32mI (126254) main: supposed to have printed[0m
+
+[0;32mI (128254) main: supposed to have printed[0m
+
+[0;32mI (130254) main: supposed to have printed[0m
+
+[0;32mI (132254) main: supposed to have printed[0m
+
+[0;32mI (134254) main: supposed to have printed[0m
+
+[0;32mI (136254) main: supposed to have printed[0m
+
+[0;32mI (138254) main: supposed to have printed[0m
+
+[0;32mI (140254) main: supposed to have printed[0m
+
+[0;32mI (142254) main: supposed to have printed[0m
+
+[0;32mI (144254) main: supposed to have printed[0m
+
+[0;32mI (146254) main: supposed to have printed[0m
+
+[0;32mI (148254) main: supposed to have printed[0m
+
+[0;32mI (150254) main: supposed to have printed[0m
+
+[0;32mI (152254) main: supposed to have printed[0m
+
+[0;32mI (154254) main: supposed to have printed[0m
+
+[0;32mI (156254) main: supposed to have printed[0m
+
+[0;32mI (158254) main: supposed to have printed[0m
+
+[0;32mI (160254) main: supposed to have printed[0m
+
+[0;32mI (162254) main: supposed to have printed[0m
+
+[0;32mI (164254) main: supposed to have printed[0m
+
+[0;32mI (166254) main: supposed to have printed[0m
+
+[0;32mI (168254) main: supposed to have printed[0m
+
+[0;32mI (170254) main: supposed to have printed[0m
+
+[0;32mI (172254) main: supposed to have printed[0m
+
+[0;32mI (174254) main: supposed to have printed[0m
+
+[0;32mI (176254) main: supposed to have printed[0m
+
+[0;32mI (178254) main: supposed to have printed[0m
+
+[0;32mI (180254) main: supposed to have printed[0m
+
+[0;32mI (182254) main: supposed to have printed[0m
+
+[0;32mI (184254) main: supposed to have printed[0m
+
+[0;32mI (186254) main: supposed to have printed[0m
+
+[0;32mI (188254) main: supposed to have printed[0m
+
+[0;32mI (190254) main: supposed to have printed[0m
+
+[0;32mI (192254) main: supposed to have printed[0m
+
+[0;32mI (194254) main: supposed to have printed[0m
+
+[0;32mI (196254) main: supposed to have printed[0m
+
+[0;32mI (198254) main: supposed to have printed[0m
+
+[0;32mI (200254) main: supposed to have printed[0m
+
+[0;32mI (202254) main: supposed to have printed[0m
+
+[0;32mI (204254) main: supposed to have printed[0m
+
+[0;32mI (206254) main: supposed to have printed[0m
+
+[0;32mI (208254) main: supposed to have printed[0m
+
+[0;32mI (210254) main: supposed to have printed[0m
+
+[0;32mI (212254) main: supposed to have printed[0m
+
+[0;32mI (214254) main: supposed to have printed[0m
+
+[0;32mI (216254) main: supposed to have printed[0m
+
+[0;32mI (218254) main: supposed to have printed[0m
+
+[0;32mI (220254) main: supposed to have printed[0m
+
+[0;32mI (222254) main: supposed to have printed[0m
+
+[0;32mI (224254) main: supposed to have printed[0m
+
+[0;32mI (226254) main: supposed to have printed[0m
+
+[0;32mI (228254) main: supposed to have printed[0m
+
+[0;32mI (230254) main: supposed to have printed[0m
+
+[0;32mI (232254) main: supposed to have printed[0m
+
+[0;32mI (234254) main: supposed to have printed[0m
+
+[0;32mI (236254) main: supposed to have printed[0m
+
+[0;32mI (238254) main: supposed to have printed[0m
+
+[0;32mI (240254) main: supposed to have printed[0m
+
+[0;32mI (242254) main: supposed to have printed[0m
+
+[0;32mI (244254) main: supposed to have printed[0m
+
+[0;32mI (246254) main: supposed to have printed[0m
+
+[0;32mI (248254) main: supposed to have printed[0m
+
+[0;32mI (250254) main: supposed to have printed[0m
+
+[0;32mI (252254) main: supposed to have printed[0m
+
+[0;32mI (254254) main: supposed to have printed[0m
+
+[0;32mI (256254) main: supposed to have printed[0m
+
+[0;32mI (258254) main: supposed to have printed[0m
+
+[0;32mI (260254) main: supposed to have printed[0m
+
+[0;32mI (262254) main: supposed to have printed[0m
+
+[0;32mI (264254) main: supposed to have printed[0m
+
+[0;32mI (266254) main: supposed to have printed[0m
+
+[0;32mI (268254) main: supposed to have printed[0m
+
+[0;32mI (270254) main: supposed to have printed[0m
+
+[0;32mI (272254) main: supposed to have printed[0m
+
+[0;32mI (274254) main: supposed to have printed[0m
+
+[0;32mI (276254) main: supposed to have printed[0m
+
+[0;32mI (278254) main: supposed to have printed[0m
+
+[0;32mI (280254) main: supposed to have printed[0m
+
+[0;32mI (282254) main: supposed to have printed[0m
+
+[0;32mI (284254) main: supposed to have printed[0m
+
+[0;32mI (286254) main: supposed to have printed[0m
+
+[0;32mI (288254) main: supposed to have printed[0m
+
+[0;32mI (290254) main: supposed to have printed[0m
+
+[0;32mI (292254) main: supposed to have printed[0m
+
+[0;32mI (294254) main: supposed to have printed[0m
+
+[0;32mI (296254) main: supposed to have printed[0m
+
+[0;32mI (298254) main: supposed to have printed[0m
+
+[0;32mI (300254) main: supposed to have printed[0m
+
+[0;32mI (302254) main: supposed to have printed[0m
+
+[0;32mI (304254) main: supposed to have printed[0m
+
+[0;32mI (306254) main: supposed to have printed[0m
+
+[0;32mI (308254) main: supposed to have printed[0m
+
+[0;32mI (310254) main: supposed to have printed[0m
+

@@ -1,0 +1,442 @@
+Command: /home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/l86/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c6 --revision 0 --decode-panic backtrace /home/l86/projects/accelerometer/build/accelerometer.elf /home/l86/projects/accelerometer/build/bootloader/bootloader.elf -m '/home/l86/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/l86/esp/esp-idf/tools/idf.py' '-p' '/dev/ttyACM0'
+[0;32mI (113) esp_image: segment 3: paddr=00035a04 vaddr=40805fc0 sizeESP-ROM:esp32c6-20220919[0m
+Build:Sep 19 2022
+rst:0x15 (USB_UART_HPSYS),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x42007134
+SPIWP:0xee
+mode:DIO, clock div:2
+load:0x40875730,len:0x1744
+load:0x4086b910,len:0xe78
+load:0x4086e610,len:0x31c8
+entry 0x4086b91a
+[0;32mI (23) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (23) boot: compile time Nov 16 2025 15:56:11[0m
+[0;32mI (24) boot: chip revision: v0.2[0m
+[0;32mI (24) boot: efuse block revision: v0.3[0m
+[0;32mI (26) boot.esp32c6: SPI Speed      : 80MHz[0m
+[0;32mI (30) boot.esp32c6: SPI Mode       : DIO[0m
+[0;32mI (34) boot.esp32c6: SPI Flash Size : 2MB[0m
+[0;32mI (38) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (51) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (58) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (64) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (71) boot: End of partition table[0m
+[0;32mI (74) esp_image: segment 0: paddr=00010020 vaddr=42018020 size=0a030h ( 41008) map[0m
+[0;32mI (89) esp_image: segment 1: paddr=0001a058 vaddr=40800000 size=05fc0h ( 24512) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=159dch ( 88540) map[0m
+[0;32mI (113) esp_image: segment 3: paddr=00035a04 vaddr=40805fc0 size=05e34h ( 24116) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=0003b840 vaddr=4080be00 size=01940h (  6464) load[0m
+[0;32mI (124) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (124) boot: Disabling RNG early entropy source...[0m
+[0;32mI (138) cpu_start: Unicore app[0m
+[0;32mI (147) cpu_start: Pro cpu start user code[0m
+[0;32mI (147) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (147) app_init: Application information:[0m
+[0;32mI (147) app_init: Project name:     accelerometer[0m
+[0;32mI (151) app_init: App version:      1[0m
+[0;32mI (155) app_init: Compile time:     Nov 16 2025 15:56:03[0m
+[0;32mI (160) app_init: ELF file SHA256:  22a9f69bf...[0m
+[0;32mI (164) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (168) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (172) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (176) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (179) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (186) heap_init: At 4080E6C0 len 0006DF50 (439 KiB): RAM[0m
+[0;32mI (191) heap_init: At 4087C610 len 00002F54 (11 KiB): RAM[0m
+[0;32mI (196) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;33mW (202) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (214) spi_flash: detected chip: generic[0m
+[0;32mI (218) spi_flash: flash io: dio[0m
+[0;33mW (221) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (233) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (239) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (246) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (250) coexist: coexist rom version 5b8dcfa[0m
+[0;32mI (255) main_task: Started on CPU0[0m
+[0;32mI (255) main_task: Calling app_main()[0m
+[1;31mE (255) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (265) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (265) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (275) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (275) example: This is the result[0m
+[1;31mE (285) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (285) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (295) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (295) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (305) example: This is the result[0m
+[1;31mE (305) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (315) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (315) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (325) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (335) example: This is the result[0m
+[1;31mE (335) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (335) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (345) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (355) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (355) example: This is the result[0m
+[1;31mE (355) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (365) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (365) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (375) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (385) example: This is the result[0m
+[1;31mE (385) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (385) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (395) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (405) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (405) example: This is the result[0m
+[1;31mE (415) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (415) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (425) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (425) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (435) example: This is the result[0m
+[1;31mE (435) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (445) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (445) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (455) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (455) example: This is the result[0m
+[1;31mE (465) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (465) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (475) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (475) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (485) example: This is the result[0m
+[1;31mE (485) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (495) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (495) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (505) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (515) example: This is the result[0m
+[1;31mE (515) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (515) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (525) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (535) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (535) example: This is the result[0m
+[1;31mE (535) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (545) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (545) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (555) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (565) example: This is the result[0m
+[1;31mE (565) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (565) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (575) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (585) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (585) example: This is the result[0m
+[1;31mE (595) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (595) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (605) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (605) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (615) example: This is the result[0m
+[1;31mE (615) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (625) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (625) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (635) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (635) example: This is the result[0m
+[1;31mE (645) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (645) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (655) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (655) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (665) example: This is the result[0m
+[1;31mE (665) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (675) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (675) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (685) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (695) example: This is the result[0m
+[1;31mE (695) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (695) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (705) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (715) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (715) example: This is the result[0m
+[1;31mE (725) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (725) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (725) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (735) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (745) example: This is the result[0m
+[1;31mE (745) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (755) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (755) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (765) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (765) example: This is the result[0m
+[1;31mE (775) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (775) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (785) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (785) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (795) example: This is the result[0m
+[1;31mE (795) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (805) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (805) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (815) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (825) example: This is the result[0m
+[1;31mE (825) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (825) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (835) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (835) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (845) example: This is the result[0m
+[1;31mE (845) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (855) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (855) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (865) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (875) example: This is the result[0m
+[1;31mE (875) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (875) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (885) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (895) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (895) example: This is the result[0m
+[1;31mE (905) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (905) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (915) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (915) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (925) example: This is the result[0m
+[1;31mE (925) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (935) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (935) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (945) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (945) example: This is the result[0m
+[1;31mE (955) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (955) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (965) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (965) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (975) example: This is the result[0m
+[1;31mE (975) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (985) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (985) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (995) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1005) example: This is the result[0m
+[1;31mE (1005) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1005) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1015) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1025) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1025) example: This is the result[0m
+[1;31mE (1035) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1035) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1035) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1045) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1055) example: This is the result[0m
+[1;31mE (1055) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1065) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1065) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1075) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1075) example: This is the result[0m
+[1;31mE (1085) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1085) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1095) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1095) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1105) example: This is the result[0m
+[1;31mE (1105) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1115) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1115) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1125) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1135) example: This is the result[0m
+[1;31mE (1135) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1135) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1145) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1155) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1155) example: This is the result[0m
+[1;31mE (1165) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1165) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1175) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1175) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1185) example: This is the result[0m
+[1;31mE (1185) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1195) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1195) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1205) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1215) example: This is the result[0m
+[1;31mE (1215) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1215) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1225) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1235) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1235) example: This is the result[0m
+[1;31mE (1235) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1245) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1245) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1255) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1265) example: This is the result[0m
+[1;31mE (1265) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1275) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1275) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1285) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1285) example: This is the result[0m
+[1;31mE (1295) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1295) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1305) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1305) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1315) example: This is the result[0m
+[1;31mE (1315) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1325) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1325) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1335) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1345) example: This is the result[0m
+[1;31mE (1345) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1345) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1355) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1365) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1365) example: This is the result[0m
+[1;31mE (1375) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1375) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1385) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1385) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1395) example: This is the result[0m
+[1;31mE (1395) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1405) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1405) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1415) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1415) example: This is the result[0m
+[1;31mE (1425) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1425) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1435) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1445) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1445) example: This is the result[0m
+[1;31mE (1445) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1455) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1455) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1465) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1475) example: This is the result[0m
+[1;31mE (1475) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1475) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1485) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1495) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1495) example: This is the result[0m
+[1;31mE (1505) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1505) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1515) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1515) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1525) example: This is the result[0m
+[1;31mE (1525) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1535) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1535) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1545) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1555) example: This is the result[0m
+[1;31mE (1555) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1555) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1565) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1575) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1575) example: This is the result[0m
+[1;31mE (1585) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1585) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1595) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1595) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1605) example: This is the result[0m
+[1;31mE (1605) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1615) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1615) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1625) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1625) example: This is the result[0m
+[1;31mE (1635) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1635) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1645) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1645) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1655) example: This is the result[0m
+[1;31mE (1655) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1665) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1665) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1675) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1685) example: This is the result[0m
+[1;31mE (1685) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1685) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1695) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1705) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1705) example: This is the result[0m
+[1;31mE (1715) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1715) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1725) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1725) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1735) example: This is the result[0m
+[1;31mE (1735) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1745) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1745) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1755) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1765) example: This is the result[0m
+[1;31mE (1765) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1765) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1775) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1785) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1785) example: This is the result[0m
+[1;31mE (1795) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1795) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1795) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1805) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1815) example: This is the result[0m
+[1;31mE (1815) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1825) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1825) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1835) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1835) example: This is the result[0m
+[1;31mE (1845) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1845) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1855) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1855) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1865) example: This is the result[0m
+[1;31mE (1865) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1875) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1875) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1885) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1895) example: This is the result[0m
+[1;31mE (1895) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1895) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1905) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1915) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1915) example: This is the result[0m
+[1;31mE (1925) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1925) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1935) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1935) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1945) example: This is the result[0m
+[1;31mE (1945) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1955) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1955) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1965) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1975) example: This is the result[0m
+[1;31mE (1975) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (1975) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (1985) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (1995) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (1995) example: This is the result[0m
+[1;31mE (1995) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2005) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2005) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2015) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2025) example: This is the result[0m
+[1;31mE (2025) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2035) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2035) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2045) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2045) example: This is the result[0m
+[1;31mE (2055) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2055) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2065) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2065) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2075) example: This is the result[0m
+[1;31mE (2075) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2085) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2085) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2095) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2105) example: This is the result[0m
+[1;31mE (2105) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2105) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2115) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2125) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2125) example: This is the result[0m
+[1;31mE (2135) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2135) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2145) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2145) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2155) example: This is the result[0m
+[1;31mE (2155) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2165) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2165) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2175) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2185) example: This is the result[0m
+[1;31mE (2185) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2185) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2195) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2205) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2205) example: This is the result[0m
+[1;31mE (2205) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2215) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2215) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2225) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m
+[0;32mI (2235) example: This is the result[0m
+[1;31mE (2235) i2c.master: I2C hardware NACK detected[0m
+[1;31mE (2245) i2c.master: I2C transaction unexpected nack detected[0m
+[1;31mE (2245) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed[0m
+[1;31mE (2255) i2c.master: i2c_master_receive(1268): I2C transaction failed[0m

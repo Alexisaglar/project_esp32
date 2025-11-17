@@ -1,0 +1,2 @@
+source /home/l86/projects/accelerometer/build/gdbinit/symbols
+source /home/l86/projects/accelerometer/build/gdbinit/connect

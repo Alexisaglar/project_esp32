@@ -1,0 +1,2 @@
+source /home/l86/projects/accelerometer/build/bootloader/gdbinit/symbols
+source /home/l86/projects/accelerometer/build/bootloader/gdbinit/connect
